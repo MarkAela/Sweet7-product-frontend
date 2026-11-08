@@ -28,10 +28,36 @@ Sweet7 is a bakery-themed e-commerce frontend built using React and Vite.
 
    `npm run dev`
 
-## Backend API
+## Backend API Connection
 
-The frontend connects to the Laravel REST API.
+The Sweet7 frontend connects to the Laravel REST API backend using Axios.
 
-## Project
+### API Configuration
 
-Sweet7 – Every cake tells a sweet story.
+Create a `.env` file in the frontend root directory and configure:
+
+```env
+VITE_API_URL=http://127.0.0.1:8090/api
+```
+
+The `.env.example` file provides the example API configuration.
+
+### Start the Backend
+
+Make sure the Laravel backend is running:
+
+```bash
+php artisan serve --port=8090
+```
+
+### Start the Frontend
+
+In another terminal, run:
+
+```bash
+npm run dev
+```
+
+The React frontend will communicate with the Laravel API at:
+
+`http://127.0.0.1:8090/api`
